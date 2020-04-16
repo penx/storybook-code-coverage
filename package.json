@@ -25,6 +25,13 @@
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json ./coverage/integration/coverage-final.json",
     "coverage:merge-report": "nyc report --reporter=lcov --temp-dir=./coverage/merged --report-dir=./coverage/merged"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!**/*.test.js",
+      "!**/*.stories.js"
+    ]
+  },
   "nyc": {
     "report-dir": "coverage/integration",
     "all": true,
