@@ -17,11 +17,12 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "coverage": "yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge",
-    "coverage:integration": "yarn cypress run",
+    "coverage": "yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
+    "coverage:integration": "rm -f .nyc_output/out.json && yarn cypress run",
     "coverage:unit": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/unit",
     "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --testMatch=\"<rootDir>/src/storyshots/index.js\" -u",
-    "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json .nyc_output/out.json"
+    "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json .nyc_output/out.json",
+    "coverage:merge-report": "nyc report --reporter=lcov --temp-dir=./coverage/merged --report-dir=./coverage/merged"
   },
   "eslintConfig": {
     "extends": "react-app"
