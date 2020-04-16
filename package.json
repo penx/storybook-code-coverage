@@ -17,9 +17,11 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "coverage": "yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge",
     "coverage:integration": "yarn cypress run",
     "coverage:unit": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/unit",
-    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --testMatch=\"<rootDir>/src/storyshots/index.js\" -u"
+    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --testMatch=\"<rootDir>/src/storyshots/index.js\" -u",
+    "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json .nyc_output/out.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +50,7 @@
     "cross-env": "^7.0.2",
     "cypress": "^4.4.0",
     "istanbul-lib-coverage": "^3.0.0",
+    "istanbul-merge": "^1.1.1",
     "nyc": "^15.0.1",
     "react-test-renderer": "^16.13.1"
   }
