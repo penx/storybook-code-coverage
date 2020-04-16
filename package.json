@@ -11,7 +11,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -34,11 +34,15 @@
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.2.1",
+    "@cypress/instrument-cra": "^1.1.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
-    "cypress": "^4.4.0"
+    "cypress": "^4.4.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "nyc": "^15.0.1"
   }
 }
