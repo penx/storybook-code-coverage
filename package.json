@@ -18,8 +18,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "coverage:integration": "yarn cypress run",
-    "coverage:unit": "cross-env CI=true react-scripts test --coverage",
-    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --testMatch=\"<rootDir>/src/storyshots/index.js\" -u"
+    "coverage:unit": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/unit",
+    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --testMatch=\"<rootDir>/src/storyshots/index.js\" -u"
   },
   "eslintConfig": {
     "extends": "react-app"
