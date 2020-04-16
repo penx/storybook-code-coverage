@@ -21,7 +21,7 @@
     "coverage": "yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:integration": "rm -rf coverage/integration && yarn cypress run",
     "coverage:unit": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/unit",
-    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --testMatch=\"<rootDir>/src/storyshots/index.js\" -u",
+    "coverage:visual-regression": "cross-env CI=true react-scripts test --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\" -u",
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json ./coverage/integration/coverage-final.json",
     "coverage:merge-report": "nyc report --reporter=lcov --temp-dir=./coverage/merged --report-dir=./coverage/merged"
   },
