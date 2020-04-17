@@ -10,6 +10,7 @@ You can view a report for each type of test, or view the coverage of all tests t
 
 ```sh
 yarn
+yarn start &
 yarn coverage
 open coverage/merged/lcov-report/index.html
 ```
