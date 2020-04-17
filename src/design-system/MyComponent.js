@@ -1,5 +1,5 @@
 import React from 'react';
-import useToggle from '../utils/useToggle';
+import useToggle from '../utilities/useToggle';
 
 export default () => {
     const {on, toggle} = useToggle()
