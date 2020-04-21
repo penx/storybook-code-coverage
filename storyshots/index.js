@@ -1,3 +1,3 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, {renderOnly} from '@storybook/addon-storyshots';
  
-initStoryshots();
+initStoryshots({test: renderOnly});
