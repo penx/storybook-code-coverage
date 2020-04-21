@@ -10,6 +10,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "start-server-and-test": "^1.11.0",
     "styled-components": "^5.1.0"
   },
   "scripts": {
@@ -19,9 +20,10 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "test:integration": "yarn cypress run",
     "coverage": "yarn coverage:clean && yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:clean": "rm -rf .nyc_output && rm -rf coverage",
-    "coverage:integration": "rm -rf coverage/integration && mkdir -p coverage/integration && yarn cypress run",
+    "coverage:integration": "rm -rf coverage/integration && mkdir -p coverage/integration && start-server-and-test start http://localhost:3000 test:integration",
     "coverage:unit": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/unit",
     "coverage:visual-regression": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\" -u",
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json ./coverage/integration/coverage-final.json",
