@@ -1,6 +1,6 @@
 # Storybook code coverage
 
-This is an example of how to set up a create-react-app application so that it collects coverage from:
+This project shows how to collect code coverage from Storybook (e.g. when using Chromatic for Visual Regresion tests) and how to create a combined report for 3 types of test:
 
 - visual regression tests (storybook/chromatic)
 - unit tests (jest)
