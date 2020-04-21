@@ -7,7 +7,7 @@ function App() {
   const { on: darkModeOn, toggle: toggleDarkMode } = useToggle();
   return (
     <GlobalStyles darkModeEnabled={darkModeOn}>
-      <h1 class="header">Example Application</h1>
+      <h1 className="header">Example Application</h1>
       Dark Mode: <Toggle on={darkModeOn} onToggle={toggleDarkMode} />
     </GlobalStyles>
   );
