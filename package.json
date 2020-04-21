@@ -18,8 +18,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
+    "coverage": "yarn coverage:clean && yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:clean": "rm -rf .nyc_output && rm -rf coverage",
-    "coverage": "yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:integration": "rm -rf coverage/integration && yarn cypress run",
     "coverage:unit": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/unit",
     "coverage:visual-regression": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\" -u",
@@ -30,7 +30,9 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/*.test.js",
-      "!**/*.stories.js"
+      "!**/test.js",
+      "!**/*.stories.js",
+      "!**/stories.js"
     ]
   },
   "nyc": {
@@ -41,7 +43,9 @@
     ],
     "exclude": [
       "**/*.test.js",
-      "**/*.stories.js"
+      "**/test.js",
+      "**/*.stories.js",
+      "**/stories.js"
     ]
   },
   "eslintConfig": {
