@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 
-import useToggle from "./useToggle";
+import { useToggle } from "./useToggle";
 
 it("is off by default", () => {
   const onMessage = "Is On";

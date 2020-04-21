@@ -1,13 +1,15 @@
-import React from 'react';
-import MyComponent from '../design-system/MyComponent';
+import React from "react";
+import { useToggle } from "../utilities/useToggle";
+import { Toggle } from "../design-system/Toggle";
+import { GlobalStyles} from "../design-system/GlobalStyles"
 
 function App() {
+  const { on: darkModeOn, toggle: toggleDarkMode } = useToggle();
   return (
-    <div>
+    <GlobalStyles darkModeEnabled={darkModeOn}>
       <h1 class="header">Example Application</h1>
-      <MyComponent />
-    </div>
-    
+      Dark Mode: <Toggle on={darkModeOn} onToggle={toggleDarkMode} />
+    </GlobalStyles>
   );
 }
 

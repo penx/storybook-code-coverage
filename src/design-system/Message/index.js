@@ -1,5 +1,6 @@
 import React from 'react';
 
-export default () => <div>
+export const Message = ({message}) => <div>
     This component is not used by the application but is in storybook.
+    {message}
 </div>

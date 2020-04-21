@@ -8,7 +8,8 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts -r @cypress/instrument-cra start",
@@ -35,8 +36,13 @@
   "nyc": {
     "report-dir": "coverage/integration",
     "all": true,
-    "include": ["src/**/*.js"],
-    "exclude": ["**/*.test.js", "**/*.stories.js"]
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "**/*.test.js",
+      "**/*.stories.js"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default (initial = false) => {
+export const useToggle = (initial = false) => {
   const [on, setOnState] = React.useState(initial);
 
   const toggle = () => setOnState((o) => !o);
