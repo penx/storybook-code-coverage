@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "styled-components": "^5.1.0"
   },
@@ -20,11 +21,11 @@
     "build-storybook": "build-storybook -s public",
     "coverage": "yarn coverage:clean && yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:clean": "rm -rf .nyc_output && rm -rf coverage",
-    "coverage:integration": "rm -rf coverage/integration && yarn cypress run",
+    "coverage:integration": "rm -rf coverage/integration && mkdir -p coverage/integration && yarn cypress run",
     "coverage:unit": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/unit",
     "coverage:visual-regression": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\" -u",
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json ./coverage/integration/coverage-final.json",
-    "coverage:merge-report": "nyc report --reporter=lcov --temp-dir=./coverage/merged --report-dir=./coverage/merged"
+    "coverage:merge-report": "nyc report --reporter=lcov --reporter=text --temp-dir=./coverage/merged --report-dir=./coverage/merged"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -64,7 +65,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.2.1",
+    "@cypress/code-coverage": "^3.4.2",
     "@cypress/instrument-cra": "^1.1.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",

@@ -25,3 +25,4 @@ https://docs.codecov.io/docs/merging-reports
 - Integration test report doesn't include files with no coverage: https://github.com/cypress-io/code-coverage/issues/194
 - Can't configure cypress-specific nyc settings outside of package.json (tbc)
 - Can't currently use create-react-app 3.4.1 - https://github.com/facebook/create-react-app/issues/8689
+- setting `"reporter": ["text", "lcov"]` in nyc settings causes cypress code coverage to crash
