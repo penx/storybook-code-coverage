@@ -17,12 +17,11 @@ open coverage/merged/lcov-report/index.html
 
 ## Combining coverage
 
-This can also be done by codecov:
-https://docs.codecov.io/docs/merging-reports
+You can also [merge reports with codecov](https://docs.codecov.io/docs/merging-reports).
 
 ## Known issues
 
-- Integration test report doesn't include files with no coverage: https://github.com/cypress-io/code-coverage/issues/194
+- Integration test report doesn't include files with no coverage [cypress-io/code-coverage#194](https://github.com/cypress-io/code-coverage/issues/194)
 - Can't configure cypress-specific nyc settings outside of package.json (tbc)
-- Can't currently use create-react-app 3.4.1 - https://github.com/facebook/create-react-app/issues/8689
+- Can't currently use create-react-app 3.4.1 - [facebook/create-react-app#8689](https://github.com/facebook/create-react-app/issues/8689)
 - setting `"reporter": ["text", "lcov"]` in nyc settings causes cypress code coverage to crash
