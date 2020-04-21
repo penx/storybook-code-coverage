@@ -67,7 +67,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.4.2",
+    "@cypress/code-coverage": "^3.5.0",
     "@cypress/instrument-cra": "^1.1.1",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
