@@ -15,6 +15,11 @@ yarn coverage
 open coverage/merged/lcov-report/index.html
 ```
 
+## Combining coverage
+
+This can also be done by codecov:
+https://docs.codecov.io/docs/merging-reports
+
 ## Known issues
 
 - Integration test report doesn't include files with no coverage: https://github.com/cypress-io/code-coverage/issues/194
