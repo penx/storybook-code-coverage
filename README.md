@@ -20,6 +20,6 @@ You can also [merge reports with codecov](https://docs.codecov.io/docs/merging-r
 
 ## Known issues
 
-- Integration test report doesn't include full statistics for files with no coverage
-- Can't configure cypress-specific nyc settings outside of generic files (package.json/nycrc)
-- Can't currently use create-react-app 3.4.1 - [facebook/create-react-app#8689](https://github.com/facebook/create-react-app/issues/8689)
+- Integration test report doesn't include full statistics for files with no coverage, though we work around this by first running a fake test via `yarn coverage:init`.
+- Can't configure cypress-specific nyc settings outside of generic files (e.g. `package.json` or `.nycrc`), but this doesn't matter too much in this example as only Cypress is using these settings/
+- Can't currently use create-react-app 3.4.1 - [facebook/create-react-app#8689](https://github.com/facebook/create-react-app/issues/8689).
