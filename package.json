@@ -40,6 +40,7 @@
   },
   "nyc": {
     "report-dir": "coverage/integration",
+    "reporter": ["text", "lcov"],
     "all": true,
     "include": [
       "src/**/*.js"
@@ -67,7 +68,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.5.0",
+    "@cypress/code-coverage": "^3.5.1",
     "@cypress/instrument-cra": "^1.1.1",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
