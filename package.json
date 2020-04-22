@@ -21,11 +21,12 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "test:integration": "cypress run",
-    "coverage": "yarn coverage:clean && yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
+    "coverage": "yarn coverage:clean && yarn coverage:init && yarn coverage:integration && yarn coverage:unit && yarn coverage:visual-regression && yarn coverage:merge && yarn coverage:merge-report",
     "coverage:clean": "rm -rf .nyc_output && rm -rf coverage",
+    "coverage:init": "react-scripts test --watchAll=false --coverage --coverageDirectory=.nyc_output --roots=\"<rootDir>\" --testMatch=\"<rootDir>/fake.test.js\" --coverageReporters=json && mv .nyc_output/coverage-final.json .nyc_output/out.json",
     "coverage:integration": "start-server-and-test 3000 test:integration",
     "coverage:unit": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/unit",
-    "coverage:visual-regression": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\" -u",
+    "coverage:visual-regression": "react-scripts test --watchAll=false --coverage --coverageDirectory=coverage/visual-regression --roots=\"<rootDir>\" --testMatch=\"<rootDir>/storyshots/index.js\"",
     "coverage:merge": "istanbul-merge --out coverage/merged/coverage-final.json ./coverage/unit/coverage-final.json  ./coverage/visual-regression/coverage-final.json ./coverage/integration/coverage-final.json",
     "coverage:merge-report": "nyc report --reporter=lcov --reporter=text --temp-dir=./coverage/merged --report-dir=./coverage/merged"
   },
@@ -49,7 +50,8 @@
       "**/*.test.js",
       "**/test.js",
       "**/*.stories.js",
-      "**/stories.js"
+      "**/stories.js",
+      "src/setupTests.js"
     ]
   },
   "eslintConfig": {
