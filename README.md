@@ -1,6 +1,8 @@
-# Storybook code coverage
+# Combining Storybook, Cypress and Jest Code Coverage
 
-This project shows how to collect code coverage from Storybook (e.g. when using Chromatic for Visual Regresion tests) and how to create a combined report for 3 types of test:
+Please refer to [this blog post for more detailed information](https://dev.to/penx/combining-storybook-cypress-and-jest-code-coverage-4pa5).
+
+This project shows how to collect code coverage from Storybook (e.g. when using Chromatic for Visual Regression tests) and how to create a combined report for 3 types of test:
 
 - visual regression tests (storybook/chromatic)
 - unit tests (jest)
