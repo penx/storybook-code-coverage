@@ -10,7 +10,11 @@ This project shows how to collect code coverage from Storybook (e.g. when using 
 
 You can view a report for each type of test, or view the coverage of all tests together.
 
+To try out this project this locally:
+
 ```sh
+git clone git@github.com:penx/storybook-code-coverage.git
+cd storybook-code-coverage
 yarn
 yarn coverage
 open coverage/merged/lcov-report/index.html
