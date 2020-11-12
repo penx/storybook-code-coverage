@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, useState } from "react";
 import { useToggle } from "../utilities/useToggle";
 import { Toggle } from "../design-system/Toggle";
 import { GlobalStyles } from "../design-system/GlobalStyles";
@@ -7,8 +7,21 @@ import { About } from "./About";
 
 const Users = React.lazy(() => import('./Users'));
 
+const one = () => {
+  return 1 + 1 - 1;
+};
+
+const two = () => {
+  return 2 + 2 - 2;
+}
+
+const three = () => {
+  return 3 + 3 - 3;
+}
+
 function App() {
   const { on: darkModeOn, toggle: toggleDarkMode } = useToggle();
+  const [value, setValue] = useState(0);
   return (
     <GlobalStyles darkModeEnabled={darkModeOn}>
       <h1 className="header">Example Application</h1>
@@ -37,11 +50,17 @@ function App() {
             <About />
           </Route>
           <Route path="/users">
-            <Users />
+            <Suspense fallback={<div>Loading</div>}>
+              <Users />
+            </Suspense>
           </Route>
           <Route path="/">
             <h1>Home</h1>
             <p>Home page</p>
+            <button onClick={() => setValue(one())}>One</button>
+            <button onClick={() => setValue(two())}>Two</button>
+            <button onClick={() => setValue(three())}>Three</button>
+            <div>Value is {value}</div>
           </Route>
           {darkModeOn && (
             <Route path="/secret">
