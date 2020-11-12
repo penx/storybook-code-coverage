@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/helper-call-delegate": "^7.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -66,6 +67,6 @@
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.3",
     "@cypress/instrument-cra": "^1.4.0",
-    "cypress": "5.5.0"
+    "cypress": "^5.6.0"
   }
 }
