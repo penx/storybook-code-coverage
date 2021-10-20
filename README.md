@@ -27,4 +27,4 @@ You can also [merge reports with codecov](https://docs.codecov.io/docs/merging-r
 ## Known issues
 
 - cypress-specific nyc settings have to go in to generic files (e.g. `package.json` or `.nycrc`)
-- There's a bug with create-react-app@3.4.1 that prevents this from working, so for now you have to roll back to 3.4.1 [facebook/create-react-app#8689](https://github.com/facebook/create-react-app/issues/8689).
+- There's a bug with create-react-app@3.4.1 that prevents this from working, so for now you have to roll back to 3.4.0 [facebook/create-react-app#8689](https://github.com/facebook/create-react-app/issues/8689).
